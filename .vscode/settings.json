@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/620c69ea-0051-4b86-916e-df21a8748f53/resourceGroups/werwird_group/providers/Microsoft.Web/sites/werwirdmillionärbackend/subscriptions/620c69ea-0051-4b86-916e-df21a8748f53/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/backendwerwirdmillionaer",
+    "appService.deploySubpath": "."
+}

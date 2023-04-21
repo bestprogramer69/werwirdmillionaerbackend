@@ -10,8 +10,17 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
-
-app.use(cors());
+const whitelist = ['https://backendwerwirdmillionaer.azurewebsites.net'];
+const corsOptions = {
+    origin: function(origin, callback) {
+        if (whitelist.indexOf(origin) !== -1 || !origin) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
+        }
+    }
+};
+app.use(cors(corsOptions));
 // config for your database
 const config = {
     server: 'werwirdmillionaer.database.windows.net',
