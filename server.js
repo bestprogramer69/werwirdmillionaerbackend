@@ -314,24 +314,25 @@ app.delete('/questions/:id', function(req, res) {
 
 
 app.get('/game', function(req, res) {
-    sql.connect(config, function(err) {
-        if (err) {
-
-            console.error('Error connecting to database:', err);
-            res.status(500).send(err);
-            return;
-        }
-        var request = new sql.Request();
-        request.query('SELECT * FROM spiele', function(err, recordset) {
-
+    res.status(200).send('get request works')
+        /* sql.connect(config, function(err) {
             if (err) {
+
+                console.error('Error connecting to database:', err);
                 res.status(500).send(err);
+                return;
             }
+            var request = new sql.Request();
+            request.query('SELECT * FROM spiele', function(err, recordset) {
 
-            res.status(200).send(recordset.recordset);
+                if (err) {
+                    res.status(500).send(err);
+                }
 
-        });
-    });
+                res.status(200).send(recordset.recordset);
+
+            });
+        });*/
 });
 
 app.post('/game', [
@@ -474,7 +475,6 @@ app.get('/answer', function(req, res) {
         });
     });
 });
-
 app.post('/answer', [
     check('antwort').notEmpty().withMessage('Answer is required')
 ], function(req, res) {
