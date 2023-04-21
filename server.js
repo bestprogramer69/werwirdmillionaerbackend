@@ -21,6 +21,10 @@ const corsOptions = {
     }
 };
 app.use(cors(corsOptions));
+app.use((req, res, next) => {
+    res.setHeader('Content-Security-Policy', "default-src 'self' https://backendwerwirdmillionaer.azurewebsites.net");
+    next();
+});
 // config for your database
 const config = {
     server: 'werwirdmillionaer.database.windows.net',
