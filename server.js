@@ -39,6 +39,11 @@ const config = {
 
 };
 
+
+app.get('/', function(req, res) {
+    res.status(200).send('Hello, World!');
+});
+
 //Kategorien
 
 app.get('/categories', function(req, res) {
